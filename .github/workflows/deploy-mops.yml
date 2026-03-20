@@ -1,0 +1,30 @@
+name: Deploy mops.html to gh-pages
+
+on:
+  push:
+    branches:
+      - 'claude/create-github-repo-4ZJQf'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout claude branch
+        uses: actions/checkout@v4
+        with:
+          ref: claude/create-github-repo-4ZJQf
+          fetch-depth: 0
+
+      - name: Deploy mops.html to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git checkout gh-pages
+          git checkout claude/create-github-repo-4ZJQf -- mops.html
+          git add mops.html
+          git diff --staged --quiet || git commit -m "Deploy mops.html from claude branch [skip ci]"
+          git push origin gh-pages
