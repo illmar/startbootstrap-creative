@@ -56,6 +56,24 @@
     distance: '0px'
   }, 300);
 
+  // Touch efekt pro mobilní zařízení – první tap zobrazí caption, druhý otevře lightbox
+  if ('ontouchstart' in window) {
+    $('.portfolio-box').on('touchstart', function(e) {
+      var $box = $(this);
+      if (!$box.hasClass('tapped')) {
+        e.preventDefault();
+        $('.portfolio-box.tapped').not($box).removeClass('tapped');
+        $box.addClass('tapped');
+      }
+      // druhý tap projde normálně a otevře lightbox
+    });
+    $(document).on('touchstart', function(e) {
+      if (!$(e.target).closest('.portfolio-box').length) {
+        $('.portfolio-box.tapped').removeClass('tapped');
+      }
+    });
+  }
+
   // Magnific popup calls
   $('.popup-gallery').magnificPopup({
     delegate: 'a',

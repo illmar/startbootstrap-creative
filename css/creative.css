@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Arial, sans-serif;
 }
 
 hr {
@@ -24,9 +24,8 @@ a {
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
-
 a:hover {
-  color: #f05f40;
+  color: rgb(239.9628640777, 94.6038834951, 63.5271359223);
 }
 
 h1,
@@ -35,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .bg-primary {
@@ -83,47 +82,40 @@ img::-moz-selection {
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
-
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
   color: #F05F40;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
-
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #f05f40;
+  color: rgb(239.9628640777, 94.6038834951, 63.5271359223);
 }
-
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #212529;
 }
-
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
   color: #F05F40;
 }
-
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
   color: #F05F40 !important;
   background-color: transparent;
 }
-
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
   background-color: transparent;
 }
-
 @media (min-width: 992px) {
   #mainNav {
     border-color: transparent;
@@ -154,7 +146,7 @@ img::-moz-selection {
     color: #F05F40;
   }
   #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #f05f40;
+    color: rgb(239.9628640777, 94.6038834951, 63.5271359223);
   }
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
@@ -176,26 +168,21 @@ header.masthead {
   -o-background-size: cover;
   background-size: cover;
 }
-
 header.masthead hr {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 header.masthead h1 {
   font-size: 2rem;
 }
-
 header.masthead p {
   font-weight: 300;
 }
-
 @media (min-width: 768px) {
   header.masthead p {
     font-size: 1.15rem;
   }
 }
-
 @media (min-width: 992px) {
   header.masthead {
     height: 100vh;
@@ -207,7 +194,6 @@ header.masthead p {
     font-size: 3rem;
   }
 }
-
 @media (min-width: 1200px) {
   header.masthead h1 {
     font-size: 4rem;
@@ -223,55 +209,78 @@ header.masthead p {
   display: block;
   max-width: 650px;
   margin: 0 auto;
+  overflow: hidden;
+  cursor: zoom-in;
 }
-
+.portfolio-box img {
+  transition: transform 0.4s ease;
+  display: block;
+  width: 100%;
+}
 .portfolio-box .portfolio-box-caption {
   position: absolute;
   bottom: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   text-align: center;
   opacity: 0;
   color: #fff;
   background: rgba(240, 95, 64, 0.9);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(1.05);
 }
-
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  transform: translateY(-50%);
   text-align: center;
+  padding: 0 15px;
 }
-
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .portfolio-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  opacity: 0.9;
+}
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   padding: 0 15px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
-
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
 }
-
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   font-size: 18px;
 }
-
+.portfolio-box:hover img {
+  transform: scale(1.08);
+}
 .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
+  transform: scale(1);
 }
-
+.portfolio-box:active img, .portfolio-box.tapped img {
+  transform: scale(1.04);
+}
+.portfolio-box:active .portfolio-box-caption, .portfolio-box.tapped .portfolio-box-caption {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (max-width: 767px) {
+  .portfolio-box .portfolio-box-caption {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  .portfolio-box:active .portfolio-box-caption, .portfolio-box.tapped .portfolio-box-caption {
+    opacity: 1;
+  }
+}
 .portfolio-box:focus {
   outline: none;
 }
-
 @media (min-width: 768px) {
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
     font-size: 16px;
@@ -290,7 +299,7 @@ header.masthead p {
   text-transform: uppercase;
   border: none;
   border-radius: 300px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .btn-xl {
@@ -301,12 +310,12 @@ header.masthead p {
   background-color: #F05F40;
   border-color: #F05F40;
 }
-
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #ee4b28 !important;
+  background-color: rgb(238.1432038835, 75.1941747573, 40.3567961165) !important;
 }
-
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
+
+/*# sourceMappingURL=creative.css.map */

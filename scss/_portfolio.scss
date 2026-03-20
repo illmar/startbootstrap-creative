@@ -4,23 +4,41 @@
   display: block;
   max-width: 650px;
   margin: 0 auto;
+  overflow: hidden;
+  cursor: zoom-in;
+
+  img {
+    transition: transform 0.4s ease;
+    display: block;
+    width: 100%;
+  }
+
   .portfolio-box-caption {
     position: absolute;
     bottom: 0;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     text-align: center;
     opacity: 0;
     color: $white;
     background: fade-out($primary, .1);
-    @include transition-all;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+
     .portfolio-box-caption-content {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      transform: translateY(-50%);
       text-align: center;
+      padding: 0 15px;
+
+      .portfolio-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        opacity: 0.9;
+      }
+
       .project-category,
       .project-name {
         padding: 0 15px;
@@ -36,14 +54,47 @@
       }
     }
   }
+
   &:hover {
+    img {
+      transform: scale(1.08);
+    }
     .portfolio-box-caption {
       opacity: 1;
+      transform: scale(1);
     }
   }
+
+  // Mobilní tap efekt
+  &:active,
+  &.tapped {
+    img {
+      transform: scale(1.04);
+    }
+    .portfolio-box-caption {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  // Na mobilu zobrazit caption s nízkou opacitou jako nápověda
+  @media (max-width: 767px) {
+    .portfolio-box-caption {
+      opacity: 0.25;
+      transform: scale(1);
+    }
+    &:active,
+    &.tapped {
+      .portfolio-box-caption {
+        opacity: 1;
+      }
+    }
+  }
+
   &:focus {
     outline: none;
   }
+
   @media (min-width: 768px) {
     .portfolio-box-caption {
       .portfolio-box-caption-content {
